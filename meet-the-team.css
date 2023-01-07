@@ -1,0 +1,307 @@
+.meetTheTeam-top p {
+  line-height: 175%;
+}
+.hrFirst {
+  display: none;
+}
+.meetTheTeam-top {
+  gap: 40px;
+}
+.meetTheTeam-top > p {
+  width: 500px;
+}
+.teams {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.teams>h6 {
+  padding: 8px 16px;
+  border-radius: 15px;
+  cursor: default;
+  opacity: 0.3;
+  color: var(--neutral-6);
+  transition: all .15s;
+}
+
+.teams>h6:first-child {
+  background: var(--blue-regular);
+  opacity: 1;
+  color: var(--white);
+}
+
+.teams>h6:hover {
+  opacity: 1 !important;
+}
+
+/* MEET THE TEAM */
+.meet-the-team-container {
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 264px);
+  grid-auto-rows: 350px;
+  grid-gap: 30px;
+  justify-content: center;
+  padding: 0 24px 80px 24px;
+  margin-top: -40px;
+}
+
+.member-container {
+  background: var(--blue-regular);
+  padding: 20px 8px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-overflow {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  margin: 0 auto 20px auto;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: var(--shadow-l);
+}
+
+.photo-overflow>img {
+  position: absolute;
+  width: 120%;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+}
+
+.member-container>h1 {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.member-container>h1:nth-of-type(2) {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 10px;
+  font-family: 'Satoshi', sans-serif;
+}
+
+.member-container>p {
+  margin-top: 32px;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(161, 232, 255);
+}
+
+.member-container:hover {
+  opacity: 0.70;
+}
+
+/* BIOGRAPHY POP-UP */
+.background-blur {
+  position: fixed;
+  width: 100%;
+  background: rgba(5, 5, 5, 0.733);
+  height: 100vh;
+  top: 0;
+  z-index: -1;
+  opacity: 0;
+}
+
+.biography-container {
+  position: fixed;
+  width: 1100px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  background: var(--white);
+  z-index: -1;
+  opacity: 0;
+  padding: 100px;
+  display: flex;
+  border-radius: 10px;
+}
+
+.biography-left {
+  text-align: center;
+  width: 350px;
+  transform: translateX(-40px);
+}
+
+.biography-left>.photo-overflow {
+  width: 175px;
+  height: 175px;
+}
+
+.biography-left-text>h1 {
+  font-size: 32px;
+  color: var(--neutral-6);
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+.biography-right {
+  width: 70%;
+}
+
+.biography-exit-button {
+  width: 35px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.biography-exit-button:hover {
+  opacity: 0.4;
+}
+
+.biography-right>p {
+  line-height: 190%;
+}
+
+.stop-scrolling {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+/* MOBILE RESPONSE HERO */
+@media only screen and (max-width: 1180px) {
+  .biography-container {
+    flex-direction: column;
+    width: calc(100% - 100px);
+    padding: 70px;
+  }
+  .biography-left {
+    display: flex;
+    width: fit-content;
+    margin: 0;
+    text-align: unset;
+    transform: unset;
+  }
+  .biography-left-text {
+    transform: translateX(35px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 155px;
+  }
+  .biography-right {
+    width: 100%;
+    transform: translateY(15px);
+  }
+
+}
+@media only screen and (max-width: 880px) {
+  .meetTheTeam-top {
+    flex-direction: column;
+  }
+  .hrFirst {
+    display: unset !important;
+  }
+  .hrSecond {
+    display: none;
+  }
+  .meetTheTeam-top {
+    gap: 0;
+  }
+  .meetTheTeam-top > p {
+    width: 100%;
+  }
+  .meetTheTeam-bottom {
+    margin-top: 32px;
+  }
+  .biography-container {
+    padding: 55px 35px;
+    width: calc(100% - 50px);
+  }
+  .biography-left {
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+  }
+  .biography-left > .photo-overflow {
+    margin: center;
+  }
+  .biography-left-text {
+    transform: translateY(-20px);
+    height: 120px;
+  }
+  .biography-left > .photo-overflow {
+    height: 150px;
+    width: 150px;
+  }
+  .biography-right {
+      margin-top: -32px;
+  }
+}
+
+@media only screen and (max-width: 625px) {
+  .teams>h6 {
+    font-size: 16px;
+  }
+  .meet-the-team-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 16px;
+    grid-auto-rows: 300px;
+    margin-top: -32px;
+    margin-bottom: 32px;
+  }
+  .photo-overflow {
+    width: 115px;
+    height: 115px;
+  }
+  .member-container > h1 {
+    font-size: 17px;
+    line-height: 125%;
+  }
+  .member-container > h1:nth-of-type(2) {
+    font-size: 14px;
+  }
+  .member-container > p {
+    margin-top: 15px;
+    font-size: 17px; 
+  }
+  .biography-container {
+    padding: 30px 25px;
+    height: 100vh;
+    width: 100%;
+    border-radius: 0;
+  }
+  .biography-left {
+    margin: 0 auto;
+  }
+  .biography-left-text > h1 {
+    font-size: 24px;
+    line-height: 8px;
+    margin: -16px 0 16px 0;
+  }
+  .biography-left-text > p {
+    font-size: 16px;
+  }
+  .biography-right {
+    margin: -55px auto auto auto;
+  }
+  .biography-right > p {
+    font-size: 14px;
+  }
+  .footer-border-top {
+  margin-top: -50px;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .teams {
+    gap: 4px;
+  }
+  .teams>h6 {
+    font-size: 15px;
+    padding: 6px 10px;
+  }
+}

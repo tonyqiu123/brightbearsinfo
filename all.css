@@ -1,0 +1,599 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900%27');
+@import url('https://fonts.googleapis.com/css?family=Mulish:300,400,500,600,700,800,900%27');
+html, body {
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+}
+* {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: var(--blue-light);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 115%;
+}
+
+/* TYPOGRAPHY */
+a {
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    width: fit-content;
+}
+p {
+    font-family: 'Mulish', sans-serif;
+    color: var(--neutral-4);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+}
+.largeText {
+    font-size: 20px;
+}
+.smallText {
+    color: var(--neutral-3);
+    font-size: 13px;
+}
+h1 {
+    font-size: 52px;
+}
+h2 {
+    font-size: 48px;
+}
+h3 {
+    font-size: 32px;
+}
+h4 {
+    font-size: 28px;
+}
+h6 {
+    font-size: 20px;
+    color: var(--blue-light);
+}
+input, textarea {
+    font-family: 'Mulish', sans-serif;
+    color: var(--neutral-4);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+}
+li {
+    list-style-type: none;
+}
+/* BUTTON */
+button {
+    cursor: pointer;
+    border-radius: 200px;
+    gap: 8px;
+    padding: 18px 24px;
+    border: 1px solid var(--neutral-2);
+    background-color: var(--white);
+    box-shadow: var(--shadow-s);
+    transition: filter .15s, box-shadow .15s; 
+}
+button:hover {
+    filter: brightness(80%);
+    box-shadow: none;
+}
+button > p {
+    color: var(--neutral-6);
+    margin: auto;
+}
+.primaryButton {
+    padding: 18px 28px;
+    border: none;
+    background-color: var(--yellow);
+}
+.primaryButton > img {
+    transform: translateY(1px);
+}
+/* COLOURS */
+:root {
+    --white: #ffffff;
+    --neutral-1: #F7F8FD;
+    --neutral-2: #E1E6F0;
+    --neutral-3: #A0AABF;
+    --neutral-4: #616A7C;
+    --neutral-5: #374151; 
+    --neutral-6: #060A1C;
+    --yellow: #FFDC24;
+    --blue-light: #266496;
+    --blue-regular: #255A86;
+    --blue-dark: #325B7C;
+    --shadow-s: 0 2px 3px rgba(0, 0, 0, 0.1);
+    --shadow-m: 0px 6px 8px -4px rgba(16, 24, 40, 0.1), 0px 4px 6px -2px rgba(16, 24, 40, 0.05);
+    --shadow-l: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0px 24px 48px -12px rgba(16, 24, 40, 0.25);
+}
+/* SECTION TEMPLATE */
+.onLoadContainer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    z-index: 9;
+    display: flex;
+    transition: opacity .5s;
+    pointer-events: none;
+}
+.onLoadContainer-onLoad {
+    margin: auto;
+    width: fit-content;
+    position: relative;
+}
+.onLoadContainer-onLoad > img:first-child {
+    position: absolute;
+    z-index: -1;
+    inset: -9999px;
+    margin: auto;
+    animation: onLoad 5s linear infinite;
+}
+.onLoadContainer-onLoad > img:nth-child(2){
+    transform: translate(6px, -6px);
+}
+@keyframes onLoad {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+section { /* The outermost tag for each section  */
+    background-color: var(--white);
+    padding: 80px 24px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+section > div {
+    width: 100%;
+    max-width: 1250px;
+    margin:auto;
+}
+.sectionImg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: .2;
+}
+.nonHomeHero > .sectionImg {
+    opacity: .4;
+}
+.darkSection {
+    background-color: var(--neutral-1);
+}
+.row {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* Makes overflowing children text become trailling dots (...). Apply to parent div.*/
+.ellipsis { 
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+/* Horizontal Line */
+.hr {
+    margin: 16px 0 24px 0;
+    background-color: var(--neutral-2);
+    height: 1px;
+    width: 100%;
+}
+/* Background color for icon */
+.iconBackground {
+    min-width: 45px;
+    min-height: 45px;
+    background-color: var(--blue-regular);
+    display: flex;
+    border-radius: 50%;
+}
+.iconBackground > img {
+    margin: auto;
+}
+/* Code for absolute-positioned images */
+.absImgContainer {
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    width: 100%;
+    border-radius: 25px;
+}
+.absImgContainer > img {
+    position: absolute;
+    height: auto;
+    width: 100%;
+    inset: -9999px;
+    margin: auto;
+}
+/* Code for See all CTA */
+.seeAll:hover {
+    transform: translateX(-4px);
+}
+.seeAll:hover > img {
+    transform: translateX(8px);
+}
+.hoverA {
+    font-size: 15px;
+}
+.hoverA:hover {
+    text-decoration: underline;
+}
+/* goToContact CTA */
+.goToContact:hover {
+    text-decoration: underline;
+  }
+/* NAV BAR */
+.nav {
+    justify-content: center;
+    display: flex;
+    height: 80px;
+    background-color: var(--white);
+    position: fixed;
+    z-index: 9;
+    box-shadow: var(--shadow-s);
+    width: 100%;
+}
+nav {
+    padding: 0 24px;
+    height: 80px;
+    background-color: var(--white);
+    width: 100%;
+    max-width: 1298px;
+}
+nav > a > img {
+    height: 40px;
+    margin-right: 8px;
+}
+.nav-right {
+    width: fit-content;
+    gap: 40px;
+    background-color: var(--white);
+}
+.nav-right p {
+    font-size: 16px;
+    color: var(--neutral-5);
+    font-weight: 600;
+}
+.nav-right > li {
+    position: relative;
+}
+.nav-right > li:hover > .nav-right-dropDown {
+    display: flex;
+    transform: unset;
+    opacity: 1;
+    pointer-events: unset;
+}
+.nav-right a {
+    gap: 6px;
+    justify-content: unset;
+}
+.nav-right > li > img {
+    transform: translateY(1px);
+}
+.nav-right-dropDown {
+    border: 1px solid var(--neutral-2);
+    pointer-events: none;
+    transition: transform .3s, opacity .2s;
+    opacity: 0;
+    transform: translateY(4px);
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: var(--white);
+    padding: 12px;
+    border-radius: 10px;
+    gap: 8px;
+    box-shadow: var(--shadow-l);
+}
+.nav-right-dropDown > a {
+    transition: background-color .15s;
+    padding: 12px;
+    width: 100%;
+    border-radius: 5px;
+}
+.nav-right-dropDown > a:hover{
+    background-color: #F2F5F8;
+}
+.nav-right > a > button {
+    padding: 14px 24px;
+}
+nav > img {
+    display: none;
+    cursor: pointer;
+    transform: translateY(4px);
+}
+/* DUMMY HEIGHT + NONHOME HERO */
+.dummy {
+    height: 80px;
+    width: auto; 
+    padding: 0px;
+}
+.nonHomeHero {
+    background-color: var(--blue-regular);
+    display: flex
+}
+.nonHomeHero > h2 {
+    color: white;
+    margin: auto;
+}
+/* MISSION STATEMENT */
+.mission {
+    background-color: var(--white);
+    box-shadow: var(--shadow-s);
+    padding: 40px;
+    gap: 24px;
+    max-width: 850px;
+    border-radius: 25px;
+}
+.mission .largeText {
+    font-style: italic;
+}
+.mission > img {
+    width: 124px
+}
+.mission-quote > p, .mission > p, .mission > img {
+    margin: 0 16px;
+}
+.mission-logo {
+    max-width: fit-content;
+    margin: auto;
+}
+.mission-logo > img {
+    height: 40px;
+    margin-right: 8px;
+}
+.mission-quote {
+    align-items: center;
+}
+.mission-quote > h1 {
+    font-size: 70px;
+    margin: -8px 0 -16px 0;
+}
+.mission > p > span {
+    font-size: 16px;
+    font-family: "Mulish", sans-serif;
+    font-weight: 700;
+    color: var(--neutral-6);
+}
+.mission > img {
+    margin-top: -8px;
+}
+.mission-buttonsContainer {
+    gap: 16px;
+    margin-left: auto;
+}
+/* FOOTER */
+footer { 
+    background-color: var(--white);
+    padding: 70px 24px 24px 24px;
+    align-items: center;
+}
+.footer-top {
+    width: 100%;
+    max-width: 1250px;
+    align-items: unset;
+    gap: 48px;
+}
+.footer-top > a > img {
+    height: 40px;
+    margin-right: 8px;
+}
+.footer-top > div {
+    width: 100%;
+    align-items: unset;
+    gap: 32px;
+    justify-content: space-between;
+}
+.footer-top-list {
+    gap: 16px;
+    justify-content: unset;
+}
+.footer-top-list > p {
+    font-weight: 700;
+    color: var(--blue-regular);
+}
+.footer-top-list > a > p {
+    color: var(--neutral-3);
+    transition: color .15s;
+}
+.footer-top-list > a > p:hover {
+    color: var(--neutral-5);
+}
+.footer-bottom {
+    width: 100%;
+    max-width: 1250px;
+}
+.footer-bottom-socials {
+    gap: 24px;
+}
+.footer-bottom-socials > a {
+    padding: 4px 8px;
+}
+.footer-bottom-socials > a > img {
+    transition: filter .15s, opacity .15s;
+    opacity: .5;
+}
+.footer-bottom-socials > a:hover > img {
+    filter: brightness(0%);
+    opacity: 1;
+}
+@media only screen and (max-width: 1144px) {
+
+}
+@media only screen and (max-width: 1050px) {
+    .footer-top > div {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .footer-bottom-socials {
+        gap: 12px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .mission {
+        border-radius: 15px;
+    }
+}
+@media only screen and (max-width: 950px) {
+    .activeNav .nav-right {
+        transform: unset;
+        opacity: 1;
+    }
+    nav, .nav, .dummy {
+        height: 60px;
+    }
+    .nav-right {
+        margin-top: 60px;
+        transition: transform .5s;
+        transform: translateY(-125%);
+        inset: 0;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0;
+        opacity: 0;
+        z-index: -1;
+    }
+    .nav-right a {
+        padding: 24px;
+        transition: unset;
+    }
+    .nav-right a:hover {
+        background-color: #F2F5F8;
+    }
+    .nav-right > a, .nav-right > li {
+        cursor: pointer;
+    }
+    .nav-right > li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-right img {
+        display: none;
+    }
+    .nav-right-dropDown {
+        transform: unset;
+        border: none;
+        box-shadow: none;
+        position: relative;
+        top: 0;
+        border-radius: 0;
+        opacity: 1;
+        padding: 0;
+        transition: unset;
+    }
+    .nav-right * {
+        width: 100%;
+        font-size: 20px !important;
+        text-align: right;
+    }
+    .nav-right button {
+        padding: 0 !important;
+        background-color: unset;
+        box-shadow: unset;
+    }
+    nav > img {
+        display: unset;
+    }
+}
+@media only screen and (max-width: 750px) {
+    .footer-top {
+        flex-direction: column;
+        gap: 32px;
+    }
+}
+@media only screen and (max-width: 575px) {
+    p {
+        font-size: 14px;
+    }
+    .largeText {
+        font-size: 18px;
+    }
+    .smallText {
+        font-size: 12px;
+    }
+    h1 {
+        font-size: 32px;
+    }
+    h2 {
+        font-size: 32px;
+    }
+    h3 {
+        font-size: 28px;
+    }
+    h4 {
+        font-size: 22px;
+    }
+    h6 {
+        font-size: 18px;
+    }
+    section {
+        padding: 50px 16px;
+    }
+    nav {
+        padding: 16px;
+    }
+    .mission {
+        padding: 32px 24px 24px 24px;
+        gap: 24px;
+    }
+    .mission > img {
+        width: 108px
+    }
+    .mission-quote > h1 {
+        margin: -16px 0 -24px 0;
+    }
+    .mission-quote > p, .mission > p, .mission > img {
+        margin: 0;
+    }
+    .mission > img {
+        margin-top: -8px;
+    }
+    .mission-buttonsContainer {
+        margin-top: 16px;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    .mission-buttonsContainer > a, .mission-buttonsContainer button {
+        width: 100%;
+    }
+    footer {
+        padding-top: 40px;
+    }
+    .footer-bottom {
+        gap: 20px;
+        align-items: flex-start;
+        flex-direction: column-reverse;
+    }
+    .footer-bottom-socials {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .footer-top > div {
+        display: grid;
+        column-gap: 8px;
+    }
+    .footer-bottom-socials {
+        gap: 4px;
+    }
+}
+@media only screen and (max-width: 380px) {
+    .footer-top > div {
+        grid-template-columns: repeat(1,1fr);
+    }
+}
