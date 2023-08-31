@@ -1,0 +1,19 @@
+rewrites:
+  - source: "/about"
+    destination: "/about.html"
+  - source: "/contact"
+    destination: "/contact.html"
+  - source: "/blog"
+    destination: "/blog.html"  # Replace with the actual filename if needed
+  - source: "/blog-1"
+    destination: "/blog-1.html"  # Replace with the actual filename if needed
+  - source: "/events"
+    destination: "/events.html"  # Replace with the actual filename if needed
+  - source: "/meet-the-team"
+    destination: "/meet-the-team.html"  # Replace with the actual filename if needed
+  - source: "/thanks"
+    destination: "/thanks.html"  # Replace with the actual filename if needed
+  - source: "/opportunities"
+    destination: "/opportunities.html"  # Replace with the actual filename if needed
+  - source: "/(.*)"
+    destination: "/index.html"
