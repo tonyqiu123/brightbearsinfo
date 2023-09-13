@@ -358,14 +358,14 @@ function joyLi() {
 function tejeshArujuna() {
   biography_selfie.src = "https://cdn.discordapp.com/attachments/715319623637270638/859227556766810132/unknown.png";
   biography_name.innerHTML = "Tejesh Arujuna";
-  biography_title.innerHTML = "Head of Web Dev";
+  biography_title.innerHTML = "Web Dev";
   biography_description.innerHTML = "Tejesh is an energetic grade 11 student from Toronto. He spends his time finding ways to cure his boredom. Some of his favourite ways to do this include playing music, talking to friends, and being bad at League of Legends. Tejesh joined BBI to help students explore various career paths and interests, while also improving his web dev skills.";
   revealBiography();
 }
 function tonyQiu() {
   biography_selfie.src = "https://media.discordapp.net/attachments/715319623637270638/858114597567070208/unknown.png";
   biography_name.innerHTML = "Tony Qiu";
-  biography_title.innerHTML = "Web Dev";
+  biography_title.innerHTML = "Head of Web Dev";
   biography_description.innerHTML = "Tony is a grade 11 student from Scarborough. He is an extraordinarily competitive kid that wants to be as prepared as possible for the rapidly changing modern workplace. He joined BBI so he could create bigger projects with others. He is hard working, ambitious and hungry for his spot in the coding industry. Fun fact about him is that he is left handed!";
   revealBiography();
 }
