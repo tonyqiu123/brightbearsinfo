@@ -128,10 +128,11 @@ button > p {
     z-index: -1;
     inset: -9999px;
     margin: auto;
-    animation: onLoad 5s linear infinite;
+    width: 200px;
+    animation: onLoad 1s linear infinite;
 }
 .onLoadContainer-onLoad > img:nth-child(2){
-    transform: translate(6px, -6px);
+    width: 80px
 }
 @keyframes onLoad {
     100% {
